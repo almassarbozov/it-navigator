@@ -16,7 +16,7 @@
 Нужен [Node.js 20+](https://nodejs.org/).
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/it-navigator.git
+git clone https://github.com/almassarbozov/it-navigator.git
 cd it-navigator
 npm run dev
 ```
