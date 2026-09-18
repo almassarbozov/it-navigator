@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Понятный навигатор по IT-направлениям: сравнение профессий, тест и дорожные карты для старта." />
+    <meta name="theme-color" content="#08111f" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>IT Навигатор — выбери направление</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="IT Навигатор — наверх"><span>&lt;/&gt;</span> IT Навигатор</a>
+      <nav aria-label="Основная навигация">
+        <a href="#directions">Направления</a>
+        <a href="#quiz">Тест</a>
+        <a href="#roadmap">План старта</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">Карта профессий для начинающих</p>
+          <h1>Разберись, <em>кто есть кто</em> в IT</h1>
+          <p class="lead">Без сложных терминов: чем занимаются специалисты, что учат и как попробовать направление до покупки курса.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#quiz">Пройти тест за 2 минуты</a>
+            <a class="button ghost" href="#directions">Смотреть все направления</a>
+          </div>
+          <ul class="hero-stats" aria-label="Возможности проекта">
+            <li><strong>8</strong><span>направлений</span></li>
+            <li><strong>6</strong><span>вопросов</span></li>
+            <li><strong>0 ₽</strong><span>для первого шага</span></li>
+          </ul>
+        </div>
+        <div class="hero-map" aria-hidden="true">
+          <div class="orbit orbit-one"><span>КОД</span><i></i></div>
+          <div class="orbit orbit-two"><span>ДАННЫЕ</span><i></i></div>
+          <div class="orbit orbit-three"><span>ДИЗАЙН</span><i></i></div>
+          <div class="map-core">ТВОЙ<br />СТАРТ</div>
+        </div>
+      </section>
+
+      <section class="section" id="directions">
+        <div class="section-heading">
+          <div><p class="eyebrow">Исследуй</p><h2>Основные IT-направления</h2></div>
+          <p>Фильтруй карточки по типу задач. Нажми на направление, чтобы увидеть подробности.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Фильтр направлений">
+          <button class="filter active" data-filter="all" type="button">Все</button>
+          <button class="filter" data-filter="build" type="button">Создавать</button>
+          <button class="filter" data-filter="analyze" type="button">Исследовать</button>
+          <button class="filter" data-filter="protect" type="button">Защищать</button>
+          <button class="filter" data-filter="organize" type="button">Организовывать</button>
+        </div>
+        <div class="direction-grid" id="direction-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="section quiz-section" id="quiz">
+        <div class="quiz-intro">
+          <p class="eyebrow">Найди своё</p>
+          <h2>Что тебе может подойти?</h2>
+          <p>Это не профориентационный диагноз. Тест покажет направления, задачи которых ближе твоим интересам.</p>
+          <div class="quiz-note"><span>!</span> Отвечай как хочется, а не как «правильно».</div>
+        </div>
+        <div class="quiz-card" id="quiz-card"></div>
+      </section>
+
+      <section class="section" id="roadmap">
+        <div class="section-heading">
+          <div><p class="eyebrow">Первые шаги</p><h2>План старта на 4 недели</h2></div>
+          <p>Выбери направление — план обновится. Главная цель: сделать маленький проект и понять, нравится ли процесс.</p>
+        </div>
+        <label class="select-label" for="roadmap-select">Направление</label>
+        <select id="roadmap-select"></select>
+        <ol class="timeline" id="timeline"></ol>
+      </section>
+
+      <section class="section principles">
+        <p class="eyebrow">Не потеряйся</p>
+        <h2>Три правила разумного старта</h2>
+        <div class="principle-grid">
+          <article><span>01</span><h3>Пробуй руками</h3><p>Два часа практики расскажут о профессии больше, чем двадцать обзоров.</p></article>
+          <article><span>02</span><h3>Не учи всё сразу</h3><p>Выбери одно направление и один маленький проект на ближайший месяц.</p></article>
+          <article><span>03</span><h3>Показывай результат</h3><p>Загружай проекты на GitHub и проси конкретную обратную связь.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>&lt;/&gt; IT Навигатор</strong> — открытый образовательный проект.</p>
+      <p>Создан для знакомства с IT, а не для выбора профессии вместо тебя.</p>
+    </footer>
+
+    <dialog id="direction-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="Закрыть">×</button>
+      <div id="dialog-content"></div>
+    </dialog>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
